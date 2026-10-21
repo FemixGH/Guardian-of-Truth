@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guardian-of-truth"
+version = "0.1.0"
+description = "Contextual-hallucination guardrail for LLM agents: deterministic checks + reasoning LLM judge (vLLM)"
+requires-python = ">=3.10"
+# vLLM / torch are provided by the evaluation image (as in the organisers' baseline).
+dependencies = [
+    "openai>=1.40",
+    "pandas>=2.0",
+    "pyarrow>=15",
+    "numpy>=1.24",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+guardian = ["*.md"]

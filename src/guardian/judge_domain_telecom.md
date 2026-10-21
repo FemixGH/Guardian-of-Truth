@@ -1,0 +1,7 @@
+Telecom-specific rules to check (from the policy):
+- Device actions (check_status_bar, check_network_status, check_sim_status, check_apn_settings, check_wifi_calling_status, check_app_permissions, can_send_mms, run_speed_test, toggle_*, set_network_mode_preference, reset_apn_settings, reboot_device, reseat_sim_card, grant_app_permission, ...) are performed BY THE USER on their phone. The agent must ask the user to perform them. Calling them as agent tools, claiming to run them "remotely"/"from my side", or claiming their results without the user reporting them is a hallucination.
+- A suspended line must NOT be resumed (and resuming must not be promised) if the contract end date is in the past relative to the current time stated in the policy, even after payment.
+- send_payment_request only for a bill that is overdue; only one bill may be awaiting payment; never say a bill is paid unless its status is PAID.
+- Data refuel and plan change: the price must be confirmed with the user before acting.
+- Transfer to a human only after all applicable troubleshooting steps for the issue were tried (or the policy explicitly requires escalation); a transfer needs the transfer_to_human_agents call.
+Telecom things that are NOT hallucinations: asking the user to perform device checks/fixes and report the result; short general explanations of how a phone setting works that agree with the policy's troubleshooting guide; reassurance without factual claims about the account.

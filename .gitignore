@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+.pytest_cache/
+.venv/
+dist/
+runs/
+data/
+*.parquet
+*.csv
+*.zip
+model/*
+!model/calibration.json

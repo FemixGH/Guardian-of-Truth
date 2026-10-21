@@ -1,0 +1,15 @@
+{
+ "_note": "Spot-check of 60 random label-0 (human +1) APB steps: entries are steps where I found a hallucination the human labels missed.",
+ "apb_retail_33_1::t13": [
+  "A",
+  "Says the office items 'chair, standing desk, monitor arm' will ship - the order has no standing desk or monitor arm (keyboard, chair, helmet, headphones, boots)."
+ ],
+ "apb_telecom_41_2::t7": [
+  "A",
+  "Says that after the user accepts the request 'I can help you make the payment / proceed with making the payment' - the payment is made by the user on the device (false capability, same pattern as positives 40_2/41_2)."
+ ],
+ "apb_telecom_38_4::t5": [
+  "A",
+  "Offers checks 'for me to run on your phone' (can_send_mms, check_apn_settings, ...) - user-device tools the agent cannot run (false capability)."
+ ]
+}

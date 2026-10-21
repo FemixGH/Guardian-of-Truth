@@ -1,0 +1,62 @@
+{
+ "threshold": 0.5,
+ "hard_flags": [
+  "discoverable_not_unlocked",
+  "n_identity_swap",
+  "n_placeholder",
+  "n_repeat_failed",
+  "n_schema_missing",
+  "n_unavailable",
+  "policy_hard",
+  "rules2_hard"
+ ],
+ "fallback": {
+  "bias": -10.0,
+  "w": {}
+ },
+ "llm_weight": 1.0,
+ "agg": "max",
+ "tool_only_positive": false,
+ "prompts": [
+  "judge_prompt_v3f.md"
+ ],
+ "single_prompt": null,
+ "quota": null,
+ "score_w": {
+  "hard": 10.0,
+  "think": 3.0,
+  "single": 1.0,
+  "tool_only": 0.5
+ },
+ "layout": "head",
+ "skip_flagged": true,
+ "specialists": {},
+ "stop_at_verdict": true,
+ "confirm": null,
+ "fail_if_no_llm": true,
+ "server": {
+  "parser": null,
+  "language_model_only": false,
+  "extra_args": [
+   "--trust-remote-code",
+   "--chat-template-content-format",
+   "string"
+  ],
+  "env": {
+   "PYTHONPATH": "{ROOT}/k2port",
+   "GUARDIAN_K2_PORT": "1"
+  }
+ },
+ "judge": {
+  "temperature": 1.0,
+  "extra_body": {
+   "chat_template_kwargs": {
+    "reasoning_effort": "high"
+   },
+   "top_p": 0.95,
+   "repetition_penalty": 1.05
+  },
+  "force_mode": "prefill",
+  "max_tokens": 8192
+ }
+}

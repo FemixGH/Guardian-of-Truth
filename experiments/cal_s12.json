@@ -1,0 +1,64 @@
+{
+ "threshold": 0.5,
+ "hard_flags": [
+  "discoverable_not_unlocked",
+  "n_identity_swap",
+  "n_placeholder",
+  "n_repeat_failed",
+  "n_schema_missing",
+  "n_unavailable",
+  "policy_hard"
+ ],
+ "fallback": {
+  "bias": -2.0,
+  "w": {
+   "tool_only": 3.0,
+   "n_writes": 0.5,
+   "action_claim_no_call": -0.5
+  }
+ },
+ "llm_weight": 1.0,
+ "agg": "max",
+ "tool_only_positive": false,
+ "prompts": [
+  "judge_prompt_v3f.md",
+  "judge_prompt_v2.md"
+ ],
+ "single_prompt": null,
+ "quota": null,
+ "score_w": {
+  "hard": 10.0,
+  "think": 3.0,
+  "single": 1.0,
+  "tool_only": 0.5
+ },
+ "layout": "head",
+ "skip_flagged": true,
+ "specialists": {
+  "numbers": "spec_numbers.md"
+ },
+ "stages": [
+  {
+   "model": "qwen",
+   "reasoning_parser": "qwen3",
+   "prompts": [
+    "judge_prompt_v3f.md"
+   ],
+   "specialists": {
+    "numbers": "spec_numbers.md"
+   }
+  },
+  {
+   "model": "gemma",
+   "reasoning_parser": "gemma4",
+   "prompts": [
+    "judge_prompt_v3f.md"
+   ],
+   "specialists": {},
+   "max_tokens": 6000,
+   "extra_body": {
+    "repetition_penalty": 1.05
+   }
+  }
+ ]
+}

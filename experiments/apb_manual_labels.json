@@ -1,0 +1,574 @@
+{
+ "apb_airline_0_0::t7": [
+  "A",
+  "Calls a 1449 one-stop itinerary 'the cheapest business round trip' and computes a difference vs. an unsupported $567 base; offers certificates for a flight modification - unsupported/incorrect figures and payment claim."
+ ],
+ "apb_airline_0_1::t3": [
+  "B",
+  "Balances listed correctly (sums not given) and asks for the reservation id - incomplete/procedural, no ungrounded claim."
+ ],
+ "apb_airline_0_2::t12": [
+  "B",
+  "Plain search for the return leg; nothing ungrounded in this turn."
+ ],
+ "apb_airline_0_3::t10": [
+  "C",
+  "Raw JSON to the user labelling a $771 one-stop as 'cheapest_business' next to a $364 direct option - confusing, borderline contradiction."
+ ],
+ "apb_airline_0_4::t4": [
+  "B",
+  "Asks confirmation for read-only lookups - over-cautious procedure, no hallucination."
+ ],
+ "apb_airline_1_0::t5": [
+  "A",
+  "Claims gold membership makes a basic-economy cancellation refundable and offers a $100 certificate - contradicts the cancellation/compensation policy."
+ ],
+ "apb_airline_1_1::t2": [
+  "A",
+  "get_reservation_details with reservation_id 'none' - placeholder/fabricated argument."
+ ],
+ "apb_airline_1_4::t4": [
+  "A",
+  "Invents the cancellation reason 'change of plan' and says gold members may still be eligible for refund - unsupported/contradicts policy."
+ ],
+ "apb_airline_2_0::t3": [
+  "B",
+  "Return-leg search JFK->DTW; the turn itself is a legitimate search (process issue is the destination change, not a hallucinated statement)."
+ ],
+ "apb_airline_2_3::t6": [
+  "B",
+  "Search DTW->LGA on the confirmed date after explicit user confirmation - no ungrounded content."
+ ],
+ "apb_airline_2_4::t4": [
+  "A",
+  "Promises a change-fee waiver because of travel insurance (no such rule) and commits to updating before any options/prices are shown or confirmed."
+ ],
+ "apb_airline_3_0::t2": [
+  "A",
+  "Uses the user's self-declared 'Gold' status (never verified in the profile; the user is actually silver) to state 6 free bags - unsupported figure."
+ ],
+ "apb_airline_3_1::t2": [
+  "A",
+  "Same as 3_0: unverified Gold status -> wrong bag allowance (6)."
+ ],
+ "apb_airline_3_3::t2": [
+  "A",
+  "Answers '6' from the unverified Gold claim - unsupported number."
+ ],
+ "apb_airline_3_4::t3": [
+  "B",
+  "Restates membership explicitly 'as you stated' and asks for confirmation - no assertion of an unsupported fact."
+ ],
+ "apb_airline_4_0::t4": [
+  "A",
+  "$240 price difference without any price lookup; claims Gold business = 3 free bags and then 2 non-free bags - fabricated/contradictory numbers."
+ ],
+ "apb_airline_4_1::t8": [
+  "A",
+  "States Gold members get 3 free bags per passenger in business (policy: 4) - wrong policy figure."
+ ],
+ "apb_airline_4_2::t8": [
+  "B",
+  "Prices, difference and 4 free bags (Gold business) all match the tool results/policy; asks for confirmation."
+ ],
+ "apb_airline_4_3::t4": [
+  "C",
+  "Cabin upgrade executed right after the user's blanket 'yes' without presenting the price difference; arguments themselves come from the context."
+ ],
+ "apb_airline_4_4::t8": [
+  "C",
+  "Correctly says cabin must be uniform, but proposes splitting the reservation into new bookings - borderline policy-unsupported option."
+ ],
+ "apb_airline_5_0::t3": [
+  "A",
+  "Claims silver members are 'eligible for travel insurance benefits' and offers to add insurance after booking - fabricated benefit, contradicts policy (insurance cannot be added later)."
+ ],
+ "apb_airline_5_4::t2": [
+  "A",
+  "Offers to add insurance after booking while itself noting the policy forbids it - contradiction of the policy."
+ ],
+ "apb_airline_6_0::t7": [
+  "A",
+  "Option flight numbers/times/prices (HAT059 $115, HAT164 $145, HAT227/HAT139 on 05-24) do not match the search results; also proposes changing the destination."
+ ],
+ "apb_airline_6_1::t3": [
+  "B",
+  "Read-only search with a different origin; process error (origin cannot change) but no ungrounded statement in the turn."
+ ],
+ "apb_airline_6_4::t5": [
+  "B",
+  "Restates reservation correctly and asks clarifying questions about cabin/origin."
+ ],
+ "apb_airline_7_0::t8": [
+  "A",
+  "book_reservation adds passenger Isabella Moore who was not part of the confirmed booking for Ivan Smith; payment covers one passenger only."
+ ],
+ "apb_airline_7_1::t4": [
+  "C",
+  "Summary claims 2 free bags 'as you are a gold member' and insurance=yes; the truncated tool output does not let me verify - possibly unsupported."
+ ],
+ "apb_airline_7_3::t6": [
+  "A",
+  "book_reservation payment_methods use 'id'/'source' instead of the required 'payment_id' (schema violation, same as valid airline__23::t10) and ignores the certificate-first rule."
+ ],
+ "apb_airline_8_0::t4": [
+  "A",
+  "Proceeds to 'remove' a passenger and compute her refund share although the passenger count cannot change (it said so one turn earlier)."
+ ],
+ "apb_airline_8_1::t4": [
+  "A",
+  "False refusal: claims a business->basic economy cabin change is not allowed; policy allows cabin changes for the whole reservation when nothing has been flown."
+ ],
+ "apb_airline_8_3::t4": [
+  "B",
+  "Correctly refuses passenger removal; business-class cancellation eligibility and the $5,700 refund follow from the policy/reservation; offers a fare check before quoting."
+ ],
+ "apb_airline_8_4::t4": [
+  "A",
+  "update_reservation_flights without flight numbers and with payment_id 'original_payment_method' - placeholder/schema-violating arguments."
+ ],
+ "apb_airline_9_0::t8": [
+  "A",
+  "Offers a $150 certificate for '3 passengers' - the reservation data does not support 3 passengers; also asserts it cannot modify anything."
+ ],
+ "apb_airline_9_1::t5": [
+  "A",
+  "Claims basic economy flights do not qualify for compensation and the flight is not delayed - contradicts the policy and the tool results (false refusal)."
+ ],
+ "apb_airline_9_2::t13": [
+  "A",
+  "Offers $100 for 2 passengers after itself noting the reservation has one passenger - contradicts the reservation data."
+ ],
+ "apb_airline_9_3::t12": [
+  "C",
+  "Denies the delay certificate because nothing was changed/cancelled - a defensible reading of the policy, though the task expected $50; raw JSON output."
+ ],
+ "apb_airline_9_4::t7": [
+  "B",
+  "Restates reservation facts and asks the user to resolve the LAX->JFK vs EWR discrepancy - no ungrounded claim visible."
+ ],
+ "apb_airline_10_3::t10": [
+  "A",
+  "book_reservation payment_methods lack 'payment_id'/'amount' (uses id/source) - schema violation; price $174 not matching the shown fares."
+ ],
+ "apb_airline_11_0::t2": [
+  "A",
+  "get_user_details with user_id 'mei_brown_732' that the user never provided - fabricated identifier."
+ ],
+ "apb_airline_11_1::t2": [
+  "C",
+  "Assistant emits a raw tool-error JSON as its message - malformed turn, unclear whether it counts as a hallucination."
+ ],
+ "apb_airline_11_2::t9": [
+  "C",
+  "Says business class makes her eligible for delay compensation, then hedges and re-reads the policy (which requires a change/cancel) - partially contradictory but self-corrects."
+ ],
+ "apb_airline_11_3::t3": [
+  "A",
+  "Promises a $50 certificate 'as a Gold member' based on the user's unverified claim (account is regular) - unsupported."
+ ],
+ "apb_airline_11_4::t9": [
+  "B",
+  "Accurate summary (4 passengers, regular membership, no insurance, delayed) and options."
+ ],
+ "apb_airline_12_0::t9": [
+  "A",
+  "Says gold membership gives 2 free bags in economy (policy: 3) and charges $50 - wrong policy figure."
+ ],
+ "apb_airline_12_1::t8": [
+  "A",
+  "cancel_reservation without listing details / eligibility check and without explicit confirmation of the cancellation - policy violation."
+ ],
+ "apb_airline_12_3::t9": [
+  "A",
+  "Claims passengers cannot be replaced on basic economy - false refusal; policy allows modifying passenger details as long as the count is unchanged."
+ ],
+ "apb_airline_13_0::t6": [
+  "A",
+  "'3 bags, all non-free since you're a gold member' is self-contradictory; uses two certificates and promises a $198 refund of certificate surplus - against payment policy."
+ ],
+ "apb_airline_13_1::t5": [
+  "A",
+  "Presents 06:00 and 01:00 flights and 07:00 one-stops as 'departing after 11 AM' - contradicts the times it lists/the filter."
+ ],
+ "apb_airline_13_3::t4": [
+  "C",
+  "Assumes regular membership (1 free bag); membership not visible in the shown context - possibly wrong."
+ ],
+ "apb_airline_13_4::t4": [
+  "A",
+  "book_reservation with invented arguments (no flight numbers, 'preferred_departure_after', payment 'type'/'use_largest_first') - schema violation/fabrication."
+ ],
+ "apb_airline_14_0::t5": [
+  "A",
+  "Offers to change flights of a basic-economy reservation - policy says basic economy flights cannot be modified."
+ ],
+ "apb_airline_14_1::t6": [
+  "A",
+  "Same: proposes changing a basic-economy reservation's flights - policy violation."
+ ],
+ "apb_airline_15_0::t4": [
+  "C",
+  "Lists real search results for a new destination (origin/destination cannot change) - forbidden option offered, but the data shown are grounded."
+ ],
+ "apb_airline_15_1::t3": [
+  "A",
+  "States ATL->LAS has no direct flight on the requested dates without having searched - unsupported claim."
+ ],
+ "apb_airline_15_3::t1": [
+  "B",
+  "Correctly states origin/destination cannot change and offers policy-compliant options; no ungrounded claim."
+ ],
+ "apb_airline_16_0::t6": [
+  "A",
+  "Says Silver membership + not flown means it can cancel - membership is not a cancellation criterion (economy, no 24h/insurance/business)."
+ ],
+ "apb_airline_16_1::t2": [
+  "A",
+  "get_reservation_details('ZFA04Y') before any lookup - reservation id never provided or retrieved (fabricated)."
+ ],
+ "apb_airline_16_2::t9": [
+  "A",
+  "Offers to cancel although it states the reservation does not meet the cancellation criteria - acts against the policy."
+ ],
+ "apb_airline_16_4::t5": [
+  "A",
+  "cancel_reservation for an economy booking cancelled for 'change of plan' without an eligibility basis - policy violation."
+ ],
+ "apb_retail_17_1::t6": [
+  "A",
+  "Proposed '24MP/10x/CF $3066.23' does not exist: $3066.23 is the 30MP/10x/SD variant, while 24MP/10x/CF is unavailable ($3109.83) - mixed-up item data."
+ ],
+ "apb_retail_17_3::t7": [
+  "B",
+  "Order #W8855135 is indeed pending and has no camera; the agent correctly asks which product/order is meant."
+ ],
+ "apb_retail_18_0::t10": [
+  "A",
+  "exchange uses payment_method_id 'GC7381924' (user-typed) instead of the gift card on file (gift_card_7245904) - id not in the profile."
+ ],
+ "apb_retail_19_2::t10": [
+  "B",
+  "Correct policy statements (only whole pending orders cancel, no adding items); asks for reason."
+ ],
+ "apb_retail_19_4::t2": [
+  "A",
+  "find_user_id_by_email with placeholder '<user_email>' - fabricated argument."
+ ],
+ "apb_retail_20_1::t9": [
+  "B",
+  "Reports the tool error correctly and explains exchange needs a delivered order."
+ ],
+ "apb_retail_21_1::t4": [
+  "A",
+  "Claims order #W4923227 was paid with the Visa ending 8902 without ever retrieving the order - unsupported."
+ ],
+ "apb_retail_21_4::t1": [
+  "A",
+  "find_user_id_by_name_zip with zip '00000' that the user never gave - fabricated argument."
+ ],
+ "apb_retail_23_0::t1": [
+  "A",
+  "Passes the account id 'daiki_johnson_9523' as an email to find_user_id_by_email - wrong argument for the field."
+ ],
+ "apb_retail_23_1::t1": [
+  "A",
+  "Says it uses 'the email address you provided' (none was provided) and passes the account id as the email."
+ ],
+ "apb_retail_23_4::t1": [
+  "A",
+  "Account id passed as email to find_user_id_by_email - wrong argument."
+ ],
+ "apb_retail_26_4::t1": [
+  "A",
+  "find_user_id_by_name_zip with zip 28202 that the user never provided (only 'Charlotte') - fabricated value."
+ ],
+ "apb_retail_27_1::t5": [
+  "A",
+  "get_product_details for product 6086499569 while the skateboard product is 1968349452 - id not grounded in the context."
+ ],
+ "apb_retail_27_4::t13": [
+  "A",
+  "Single exchange call on order #W3792453 including item 5753502325 that belongs to order #W7181492 - items from another order."
+ ],
+ "apb_retail_27_0::t11": [
+  "B",
+  "Exchange to item 3369928769 = 25ft vinyl green $97.35 exactly as proposed and confirmed by the user - grounded."
+ ],
+ "apb_retail_28_0::t8": [
+  "B",
+  "Order #W3445693 (contains the air purifier) is indeed delivered; refusing modification and offering return/exchange is correct."
+ ],
+ "apb_retail_28_1::t4": [
+  "A",
+  "Describes order #W3445693 as 'Air purifier and speaker' without fetching it (it actually holds sneakers, helmet, purifier) - unsupported claim."
+ ],
+ "apb_retail_28_4::t3": [
+  "A",
+  "get_order_details('#W0004521') - order id never given or retrieved (fabricated)."
+ ],
+ "apb_retail_29_3::t6": [
+  "C",
+  "Transfer for a possible misdelivery (no tool can investigate it); summary mostly grounded - premature transfer is arguable."
+ ],
+ "apb_retail_30_1::t7": [
+  "B",
+  "Items, totals ($1023.16 + $158.89 = $1182.05) and payment methods (Visa 7285, PayPal) all match the tool results."
+ ],
+ "apb_retail_30_4::t9": [
+  "B",
+  "Return call with exactly the confirmed items and the original payment method."
+ ],
+ "apb_retail_31_0::t9": [
+  "C",
+  "Says there is no boot order without having checked all listed orders (a boot exists in #W5481803 in sibling runs) - unverified negative claim."
+ ],
+ "apb_retail_31_1::t23": [
+  "C",
+  "Places the 'sneaker' in #W5481803, which contains hiking boots (and a kettle) - item identity mismatch, borderline."
+ ],
+ "apb_retail_31_4::t13": [
+  "B",
+  "Return call with exactly the item and gift-card refund the user confirmed; matches the order."
+ ],
+ "apb_retail_32_0::t8": [
+  "B",
+  "get_product_details for the earbuds product id from the order - grounded lookup."
+ ],
+ "apb_retail_32_1::t9": [
+  "A",
+  "Without any product lookup claims the cheapest IPX7 option is the 4-hour one at $258.84 'same as current' (that is the IPX4 item's price) - unsupported/contradictory."
+ ],
+ "apb_retail_32_2::t7": [
+  "B",
+  "Item list matches the order; picks the cheapest IPX4 earbud in the order as the user asked and says it will verify further."
+ ],
+ "apb_retail_32_4::t2": [
+  "A",
+  "get_order_details('#W0001234') - order id never given or retrieved (fabricated)."
+ ],
+ "apb_retail_33_0::t7": [
+  "A",
+  "Says the pending order lets it 'cancel the Office Chair' with a $511.24 refund, then that single items cannot be cancelled - offers an impossible partial cancellation (policy contradiction)."
+ ],
+ "apb_retail_33_2::t8": [
+  "A",
+  "Offers to 'cancel just the office items' of a pending order - partial cancellation is not allowed by the policy."
+ ],
+ "apb_retail_33_3::t6": [
+  "B",
+  "Address change proposal with confirmation; item list of the order is correct."
+ ],
+ "apb_retail_33_4::t1": [
+  "A",
+  "find_user_id_by_name_zip with empty first/last name and zip - arguments not grounded."
+ ],
+ "apb_telecom_34_0::t3": [
+  "A",
+  "Agent calls check_status_bar - a user-device action, not in the agent's [AVAILABLE TOOLS]."
+ ],
+ "apb_telecom_35_0::t6": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_35_1::t2": [
+  "A",
+  "Agent claims it will reset APN and calls reset_apn_settings - a user-device action not available to the agent."
+ ],
+ "apb_telecom_35_4::t13": [
+  "B",
+  "Repeats an identical successful lookup (get_details_by_id L1002) - redundant, not a hallucination."
+ ],
+ "apb_telecom_36_0::t5": [
+  "A",
+  "Agent calls check_network_status (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_36_4::t6": [
+  "A",
+  "Asserts the pulled line L1001 (555-123-2001) 'matches the device info' although the user's number is 555-123-2002 - unsupported line attribution."
+ ],
+ "apb_telecom_37_0::t4": [
+  "A",
+  "Agent calls check_network_status (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_37_4::t8": [
+  "A",
+  "Says 'Running check_network_status() now' but actually calls get_customer_by_phone - claimed action does not match the call."
+ ],
+ "apb_telecom_38_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_38_1::t4": [
+  "A",
+  "Agent calls check_apn_settings (user-device tool, unavailable to the agent) with an invented argument."
+ ],
+ "apb_telecom_38_2::t3": [
+  "A",
+  "Calls L1001 (555-123-2001) 'your line' although the user's number is 555-123-2002 - wrong line attribution (asking the user to run can_send_mms is fine)."
+ ],
+ "apb_telecom_38_4::t12": [
+  "A",
+  "get_details_by_id with id 'check_apn_settings_for_L1002' - fabricated identifier."
+ ],
+ "apb_telecom_39_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_39_1::t5": [
+  "A",
+  "Blames the user's No Service on suspended line L1003 (not the user's 555-123-2002 line) and inverts the contract-end rule for resuming - unsupported/contradicting."
+ ],
+ "apb_telecom_39_4::t15": [
+  "C",
+  "Suggests generic device steps (other SIM slot, reset network settings) not in the tech-support manual - procedure not grounded, but plausible advice."
+ ],
+ "apb_telecom_40_0::t3": [
+  "B",
+  "Read-only plan lookup - harmless."
+ ],
+ "apb_telecom_40_1::t4": [
+  "A",
+  "resume_line on a suspended line without checking the reason/overdue bill payment required by the policy."
+ ],
+ "apb_telecom_40_2::t8": [
+  "A",
+  "Claims it needs a make_payment tool and transfers to a human - the user pays the request on the device; premature transfer with a false capability statement."
+ ],
+ "apb_telecom_40_4::t5": [
+  "B",
+  "Device lookup get_details_by_id(D1002) - grounded read."
+ ],
+ "apb_telecom_41_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_41_1::t4": [
+  "A",
+  "resume_line on the suspended line without checking/settling the overdue bill required by the policy."
+ ],
+ "apb_telecom_41_2::t12": [
+  "A",
+  "Claims it lacks a needed make_payment tool and moves to transfer - the user pays the request on the device (false limitation/premature transfer)."
+ ],
+ "apb_telecom_41_4::t24": [
+  "A",
+  "Says it will run the device network status check but calls get_details_by_id(L1002) again - claimed action does not match the call."
+ ],
+ "apb_telecom_42_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_42_1::t5": [
+  "A",
+  "Blames suspended L1003 (not the user's line) and claims the suspension cannot be lifted even after payment because the contract has not ended - inverted policy rule."
+ ],
+ "apb_telecom_42_4::t6": [
+  "B",
+  "After 'Run checks' it repeats a data-usage lookup - redundant, no ungrounded claim in this turn."
+ ],
+ "apb_telecom_43_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_43_1::t5": [
+  "A",
+  "Announces it is resuming both suspended lines without checking bills (and without any call) - policy violation + claimed action."
+ ],
+ "apb_telecom_43_3::t8": [
+  "A",
+  "Says the bill is still unpaid and asks the user to pay, although make_payment just succeeded in the context - contradicts tool results."
+ ],
+ "apb_telecom_43_4::t5": [
+  "A",
+  "Offers to run check_sim_status itself - a user-device action the agent cannot perform (false capability)."
+ ],
+ "apb_telecom_44_0::t5": [
+  "A",
+  "Calls check_status_bar (user-device tool) right after check_network_status failed as 'not found' - unavailable tool."
+ ],
+ "apb_telecom_44_1::t4": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_44_3::t7": [
+  "B",
+  "Step-by-step guidance for the user to turn off Airplane Mode - user-side instructions, nothing ungrounded."
+ ],
+ "apb_telecom_44_4::t7": [
+  "A",
+  "Offers to 'remotely toggle Airplane Mode' itself - a user-device action the agent cannot perform (false capability)."
+ ],
+ "apb_telecom_45_0::t7": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_45_1::t4": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_45_3::t3": [
+  "B",
+  "Generic instructions for the user to enable mobile data - user-side guidance."
+ ],
+ "apb_telecom_45_4::t1": [
+  "A",
+  "get_customer_by_name with dob '1958-04-12' that the user never provided - fabricated argument."
+ ],
+ "apb_telecom_46_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_46_1::t5": [
+  "A",
+  "Calls the L1003 contract end date June 30, 2026 'in the past' and says the suspension may affect the active primary line - contradicts the data."
+ ],
+ "apb_telecom_46_3::t7": [
+  "B",
+  "Correctly says line 2002 is active and guides user-side settings checks."
+ ],
+ "apb_telecom_46_4::t2": [
+  "A",
+  "Says it can run check_network_status/check_sim_status itself - user-device tools the agent does not have (false capability)."
+ ],
+ "apb_telecom_47_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_47_1::t4": [
+  "A",
+  "resume_line on the suspended line without checking/settling the overdue bill required by the policy."
+ ],
+ "apb_telecom_47_4::t2": [
+  "A",
+  "Says it will run check_network_status on the user's device - a user-device tool the agent does not have."
+ ],
+ "apb_telecom_48_0::t3": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_48_1::t5": [
+  "A",
+  "Says the L1003 suspension 'ends on June 30, 2026' (that is the contract end) and announces resuming the line without any call or bill check."
+ ],
+ "apb_telecom_48_4::t18": [
+  "B",
+  "A plain line lookup; the problematic offer to reset the APN itself was in the previous turn."
+ ],
+ "apb_telecom_49_0::t10": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_49_1::t4": [
+  "A",
+  "Agent calls check_status_bar (user-device tool, unavailable to the agent)."
+ ],
+ "apb_telecom_49_3::t5": [
+  "B",
+  "User-side SIM reseat guidance; nothing ungrounded."
+ ],
+ "apb_telecom_49_4::t10": [
+  "A",
+  "Offers to 'run a network status check from the device' itself - user-device action the agent cannot perform."
+ ]
+}
